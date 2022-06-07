@@ -1,0 +1,7 @@
+.btn-show-filter {
+    margin-bottom: 2rem;
+}
+
+mat-expansion-panel:last-child {
+    margin-bottom: 2rem;
+}

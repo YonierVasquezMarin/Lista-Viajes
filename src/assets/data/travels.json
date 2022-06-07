@@ -1,0 +1,12 @@
+[
+    {
+        "origin": "Manizales",
+        "destiny": "Pereira",
+        "distance": 40,
+        "medium": "Bus",
+        "travelTime": 30,
+        "availability": "Alta",
+        "supplierCompany": "TransArmenia S.A.",
+        "price": 20000
+    }
+]

@@ -1,0 +1,171 @@
+<!-- Botón para abrir menú de filtrado -->
+<button (click)="showOrHideFilterMenu()" class="btn-show-filter" mat-raised-button color="primary">
+    <mat-icon *ngIf="openFilterMenu == false" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    <mat-icon *ngIf="openFilterMenu == true" aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+    Agregar filtro
+</button>
+
+<!-- Menu para filtrar -->
+<div *ngIf="openFilterMenu">
+    <mat-accordion class="example-headers-align filter-menu" multi>
+        <mat-expansion-panel [expanded]="idFilterItem === 1 && someItemSelected" (opened)="setFilterItem(1)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Columnas
+                </mat-panel-title>
+                <mat-panel-description>
+                    Muestra u oculta columnas
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 2" (opened)="setFilterItem(2)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Origen
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por origen
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 3" (opened)="setFilterItem(3)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Destino
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por destino
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 4" (opened)="setFilterItem(4)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Distancia
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por un rango de distancia
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 5" (opened)="setFilterItem(5)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Medios
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por medios de transporte
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 6" (opened)="setFilterItem(6)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Duración
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por un rango de duración
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 7" (opened)="setFilterItem(7)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Disponibilidad
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por disponibilidad del viaje
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 8" (opened)="setFilterItem(8)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Empresas
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por empresas de transporte
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="idFilterItem === 9" (opened)="setFilterItem(9)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Precio
+                </mat-panel-title>
+                <mat-panel-description>
+                    Filtrar por rango de precios
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h3>test</h3>
+
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</div>
+
+
+<!-- Tabla con la información de los viajes -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
