@@ -5,3 +5,12 @@
 mat-expansion-panel:last-child {
     margin-bottom: 2rem;
 }
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}

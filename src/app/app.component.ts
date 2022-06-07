@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Lista-Viajes';
+
+  // aquí se envía un filtro a la tabla: solo se mostrarán estas columnas
+  @Output() displayedColumns: string[] = ['origin', 'destiny', 'medium', 'travelTime', 'price'];
+  
+  // estas son todas las opciones
+  // ['origin', 'destiny', 'distance', 'medium', 'travelTime', 'availability', 'supplierCompany', 'price'];
 }

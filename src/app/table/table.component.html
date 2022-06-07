@@ -8,7 +8,7 @@
 <!-- Menu para filtrar -->
 <div *ngIf="openFilterMenu">
     <mat-accordion class="example-headers-align filter-menu" multi>
-        <mat-expansion-panel [expanded]="idFilterItem === 1 && someItemSelected" (opened)="setFilterItem(1)">
+        <mat-expansion-panel [expanded]="idFilterItem === 1 && someItemSelected" (opened)="setFilterItem(1)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Columnas
@@ -18,11 +18,12 @@
                 </mat-panel-description>
             </mat-expansion-panel-header>
 
-            <h3>test</h3>
+            <!-- Aqui irán los checkboxs para mostrar o no las columnas -->
+            <strong>Aquí iran los checkboxs para mostrar u ocultar las columnas</strong>
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 2" (opened)="setFilterItem(2)">
+        <!-- <mat-expansion-panel [expanded]="idFilterItem === 2" (opened)="setFilterItem(2)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Origen
@@ -36,7 +37,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 3" (opened)="setFilterItem(3)">
+        <mat-expansion-panel [expanded]="idFilterItem === 3" (opened)="setFilterItem(3)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Destino
@@ -50,7 +51,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 4" (opened)="setFilterItem(4)">
+        <mat-expansion-panel [expanded]="idFilterItem === 4" (opened)="setFilterItem(4)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Distancia
@@ -64,7 +65,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 5" (opened)="setFilterItem(5)">
+        <mat-expansion-panel [expanded]="idFilterItem === 5" (opened)="setFilterItem(5)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Medios
@@ -78,7 +79,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 6" (opened)="setFilterItem(6)">
+        <mat-expansion-panel [expanded]="idFilterItem === 6" (opened)="setFilterItem(6)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Duración
@@ -92,7 +93,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 7" (opened)="setFilterItem(7)">
+        <mat-expansion-panel [expanded]="idFilterItem === 7" (opened)="setFilterItem(7)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Disponibilidad
@@ -106,7 +107,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 8" (opened)="setFilterItem(8)">
+        <mat-expansion-panel [expanded]="idFilterItem === 8" (opened)="setFilterItem(8)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Empresas
@@ -120,7 +121,7 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="idFilterItem === 9" (opened)="setFilterItem(9)">
+        <mat-expansion-panel [expanded]="idFilterItem === 9" (opened)="setFilterItem(9)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Precio
@@ -132,7 +133,7 @@
 
             <h3>test</h3>
 
-        </mat-expansion-panel>
+        </mat-expansion-panel> -->
 
     </mat-accordion>
 </div>
@@ -141,28 +142,52 @@
 <!-- Tabla con la información de los viajes -->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <!-- Origin Column -->
+    <ng-container matColumnDef="origin">
+        <th mat-header-cell *matHeaderCellDef> Origen </th>
+        <td mat-cell *matCellDef="let element"> {{element.origin}} </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <!-- Destinity Column -->
+    <ng-container matColumnDef="destiny">
+        <th mat-header-cell *matHeaderCellDef> Destino </th>
+        <td mat-cell *matCellDef="let element"> {{element.destiny}} </td>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <!-- Distance Column -->
+    <ng-container matColumnDef="distance">
+        <th mat-header-cell *matHeaderCellDef> Distancia </th>
+        <td mat-cell *matCellDef="let element"> {{element.distance}} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <!-- Medium Column -->
+    <ng-container matColumnDef="medium">
+        <th mat-header-cell *matHeaderCellDef> Medio </th>
+        <td mat-cell *matCellDef="let element"> {{element.medium}} </td>
+    </ng-container>
+
+    <!-- TravelTime Column -->
+    <ng-container matColumnDef="travelTime">
+        <th mat-header-cell *matHeaderCellDef> Duracion </th>
+        <td mat-cell *matCellDef="let element"> {{element.travelTime}} </td>
+    </ng-container>
+
+    <!-- Availability Column -->
+    <ng-container matColumnDef="availability">
+        <th mat-header-cell *matHeaderCellDef> Disponibilidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.availability}} </td>
+    </ng-container>
+
+    <!-- SupplierCompany Column -->
+    <ng-container matColumnDef="supplierCompany">
+        <th mat-header-cell *matHeaderCellDef> Transportadora </th>
+        <td mat-cell *matCellDef="let element"> {{element.supplierCompany}} </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
