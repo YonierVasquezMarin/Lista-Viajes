@@ -8,5 +8,66 @@
         "availability": "Alta",
         "supplierCompany": "TransArmenia S.A.",
         "price": 20000
+    },
+    {
+        "origin": "Bogotá",
+        "destiny": "Ibagué",
+        "distance": 70,
+        "medium": "Bus",
+        "travelTime": 90,
+        "availability": "Baja",
+        "supplierCompany": "Bolivariano S.A",
+        "price": 30000
+    },
+    {
+        "origin": "Medellin",
+        "destiny": "Cartagen",
+        "distance": 100,
+        "medium": "Avion",
+        "travelTime": 50,
+        "availability": "Media",
+        "supplierCompany": "Avianca S.A",
+        "price": 200000
+    },
+    {
+        "origin": "Armenia",
+        "destiny": "Cali",
+        "distance": 35,
+        "medium": "Bus",
+        "travelTime": 25,
+        "availability": "Alta",
+        "supplierCompany": "TransArmenia S.A.",
+        "price": 15000
+    },
+    {
+        "origin": "Pereira",
+        "destiny": "Santa Rosa",
+        "distance": 10,
+        "medium": "Bus",
+        "travelTime": 15,
+        "availability": "Muy alta",
+        "supplierCompany": "Travels S.A.",
+        "price": 13000
+    },
+    {
+        "origin": "Cartago",
+        "destiny": "Pereira",
+        "distance": 10,
+        "medium": "Bus",
+        "travelTime": 15,
+        "availability": "Alta",
+        "supplierCompany": "Metro Via",
+        "price": 32000
+    },
+    {
+        "origin": "Bogotá",
+        "destiny": "Girardot",
+        "distance": 30,
+        "medium": "Bus",
+        "travelTime": 33,
+        "availability": "Baja",
+        "supplierCompany": "Bolivariano",
+        "price": 40000
     }
+    
 ]

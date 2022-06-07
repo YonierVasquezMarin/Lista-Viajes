@@ -8,8 +8,6 @@ import { Component, Output } from '@angular/core';
 export class AppComponent {
 
   // aquí se envía un filtro a la tabla: solo se mostrarán estas columnas
-  @Output() displayedColumns: string[] = ['origin', 'destiny', 'medium', 'travelTime', 'price'];
+  @Output() displayedColumns: string[] = ['origin', 'destiny', 'distance', 'medium', 'travelTime', 'availability', 'supplierCompany', 'price'];
   
-  // estas son todas las opciones
-  // ['origin', 'destiny', 'distance', 'medium', 'travelTime', 'availability', 'supplierCompany', 'price'];
 }
